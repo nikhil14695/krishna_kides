@@ -66,9 +66,8 @@ export default function Hero() {
         const height = (col.children.length / 2) * (cardHeight + rowGap);
         const isEvenColumn = i % 2 === 0;
         const duration = isEvenColumn
-          ? 10 + Math.floor(i / 2) * 6
-          : 20 + Math.floor(i / 2) * 6;
-
+          ? 10 
+          : 20 ;
         gsap.fromTo(
           col,
           { y: 0 },
