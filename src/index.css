@@ -92,6 +92,9 @@ html {
 .hero-grid{
   width:120%;
   left:-10%;
+  height:120%;
+  top:-10%;
+  bottom:auto;
   will-change:transform;
   contain: layout paint size style;
   transform: translateZ(0);
