@@ -186,3 +186,71 @@ html {
 @media (max-width: 320px) {
   :root { --creta-max: 300px; --creta-gutter: 8px; }
 }
+
+.particle-bg {
+  background-image:
+    radial-gradient(circle, rgba(217,163,122,0.7) 1px, transparent 1px),
+    radial-gradient(circle, rgba(217,163,122,0.4) 1px, transparent 1px),
+    radial-gradient(circle, rgba(217,163,122,0.25) 1px, transparent 1px);
+
+  background-size:
+    120px 120px,
+    180px 180px,
+    240px 240px;
+
+  background-position:
+    0 0,
+    40px 60px,
+    100px 120px;
+
+  opacity: 0.35;
+  animation: starMove 80s linear infinite;
+}
+
+@keyframes starMove {
+  from {
+    transform: translateY(0px);
+  }
+  to {
+    transform: translateY(-200px);
+  }
+}
+
+.global-particles {
+  position: absolute;
+  pointer-events: none;
+}
+
+.global-particle {
+  position: absolute;
+  border-radius: 999px;
+  animation:
+    globalParticleFloat var(--gp-float-duration) ease-in-out infinite var(--gp-delay),
+    globalParticleTwinkle var(--gp-twinkle-duration) ease-in-out infinite var(--gp-delay);
+}
+
+@keyframes globalParticleFloat {
+  0%,
+  100% {
+    transform: translate(0, 0) scale(0.9);
+  }
+  50% {
+    transform: translate(var(--gp-drift-x), var(--gp-drift-y)) scale(1);
+  }
+}
+
+@keyframes globalParticleTwinkle {
+  0%,
+  100% {
+    filter: brightness(0.8);
+  }
+  50% {
+    filter: brightness(1.25);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .global-particle {
+    animation: none;
+  }
+}

@@ -25,6 +25,3 @@ export const images = [
   img9,
   img12,
 ];
-  img7,img8,img9,img10,img11,img12
-// ];
-

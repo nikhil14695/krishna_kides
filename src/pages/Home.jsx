@@ -54,18 +54,23 @@ export default function Home() {
 
       <Hero />
 
-      <div id="about" className="relative z-20 bg-[#0a0903]">
-        <AboutSection />
-      </div>
-      <div id="services" className="relative z-20">
-        <ServicesSection />
-      </div>
-      <div id="portfolio" className="relative z-20">
-        <PortfolioSection />
-      </div>
-      <div id="contact" className="relative z-20">
-        <TestimonialsSection />
-        <CTASection />
+      <div className="relative overflow-hidden bg-[#090704]">
+        <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(circle_at_16%_22%,rgba(212,175,103,0.13),transparent_46%),radial-gradient(circle_at_84%_78%,rgba(123,30,58,0.17),transparent_44%),linear-gradient(180deg,rgba(9,7,4,0.98),rgba(8,6,4,1))]" />
+        <div className="pointer-events-none absolute inset-0 opacity-25 [background-image:linear-gradient(rgba(214,176,106,0.07)_1px,transparent_1px),linear-gradient(90deg,rgba(214,176,106,0.06)_1px,transparent_1px)] [background-size:6px_6px,6px_6px]" />
+
+        <div id="about" className="relative z-20 scroll-mt-28 md:scroll-mt-32">
+          <AboutSection />
+        </div>
+        <div id="services" className="relative z-20 scroll-mt-28 md:scroll-mt-32">
+          <ServicesSection />
+        </div>
+        <div id="portfolio" className="relative z-20 scroll-mt-28 md:scroll-mt-32">
+          <PortfolioSection />
+        </div>
+        <div id="contact" className="relative z-20 scroll-mt-28 md:scroll-mt-32">
+          <TestimonialsSection />
+          <CTASection />
+        </div>
       </div>
     </>
   );

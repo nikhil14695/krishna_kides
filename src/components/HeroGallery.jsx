@@ -122,15 +122,23 @@ export default function Hero() {
       <div className="pointer-events-none absolute bottom-0 left-0 z-20 h-48 w-full bg-gradient-to-t from-[#0a0903] to-transparent" />
 
       {/* Global dark gradient tint over the gallery. */}
-      <div className="absolute inset-0 z-10 bg-gradient-to-b from-black/20 via-black/30 to-black/45" />
+      <div className="absolute inset-0 z-10 bg-gradient-to-b from-black/24 via-black/34 to-black/50" />
+      <div className="pointer-events-none absolute inset-0 z-[11] bg-[radial-gradient(circle_at_center,rgba(14,10,8,0.12)_0%,rgba(14,10,8,0.4)_46%,rgba(8,6,5,0.68)_100%)]" />
 
       {/* Centered brand logo above animated tiles. */}
-      <div className="absolute inset-0 z-50 flex items-center justify-center pointer-events-none">
-        <img
-          src={logo}
-          alt="Krishna Kids Studio"
-          className="w-[240px] md:w-[420px] brightness-0 invert drop-shadow-[0_0_36px_rgba(0,0,0,0.78)]"
-        />
+      <div className="pointer-events-none absolute inset-0 z-50 flex items-center justify-center">
+        <div className="relative flex items-center justify-center px-4">
+          <div className="absolute h-[170px] w-[360px] rounded-full bg-[radial-gradient(circle,rgba(14,10,8,0.52),rgba(14,10,8,0))] blur-sm md:h-[220px] md:w-[560px]" />
+          <img
+            src={logo}
+            alt="Krishna Kids Studio"
+            className="relative w-[280px] object-contain opacity-95 drop-shadow-[0_0_14px_rgba(224,174,142,0.42)] md:w-[560px]"
+            style={{
+              filter:
+                "brightness(0) saturate(100%) invert(74%) sepia(19%) saturate(526%) hue-rotate(334deg) brightness(95%) contrast(94%)",
+            }}
+          />
+        </div>
       </div>
 
       <div

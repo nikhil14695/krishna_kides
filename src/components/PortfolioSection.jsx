@@ -12,9 +12,9 @@ const portfolioImages = [img1, img2, img3, img4, img5, img6, img7, img8];
 
 export default function PortfolioSection() {
   return (
-    <section className="bg-[#0a0903] py-24 text-white md:py-28">
+    <section className="bg-transparent py-24 text-white md:py-28">
       <div className="creta-container">
-        <h2 className="mb-16 text-center text-4xl text-[#7b1e3a] md:mb-20 md:text-5xl">
+        <h2 className="mb-16 text-center text-4xl text-[#d3ad67] md:mb-20 md:text-5xl">
           Featured Works
         </h2>
 
@@ -22,7 +22,7 @@ export default function PortfolioSection() {
           {portfolioImages.map((src, index) => (
             <div
               key={index}
-              className="group overflow-hidden rounded-2xl"
+              className="group overflow-hidden rounded-2xl border border-[#d4af6a]/25 bg-[linear-gradient(160deg,rgba(26,20,15,0.95),rgba(14,11,9,0.94))] shadow-[0_12px_30px_rgba(0,0,0,0.35)]"
             >
               <img
                 src={src}
