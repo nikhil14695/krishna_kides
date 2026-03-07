@@ -90,9 +90,9 @@ html {
 /* HERO PERFORMANCE CSS */
 
 .hero-grid{
-  width:120%;
-  left:-10%;
-  height:120%;
+  width:110%;
+  left:-5%;
+  height:100%;
   top:-10%;
   bottom:auto;
   will-change:transform;
