@@ -110,12 +110,12 @@ export default function ServicesSection() {
               key={service.title}
               ref={(el) => (cardsRef.current[i] = el)}
               className="group relative min-h-[390px] overflow-hidden rounded-[24px]
-    border border-[#d4af6a]/40
-    bg-[linear-gradient(180deg,rgba(28,22,17,0.92),rgba(10,8,6,0.98))]
-    shadow-[0_0_40px_rgba(212,175,106,0.22),0_30px_70px_rgba(0,0,0,0.55)]
-    backdrop-blur-xl
-    transition duration-500 hover:-translate-y-2 hover:shadow-[0_0_55px_rgba(212,175,106,0.35),0_40px_80px_rgba(0,0,0,0.65)]"
-            >
+                border border-[#d4af6a]/40
+                bg-[linear-gradient(180deg,rgba(28,22,17,0.92),rgba(10,8,6,0.98))]
+                shadow-[0_0_40px_rgba(212,175,106,0.22),0_30px_70px_rgba(0,0,0,0.55)]
+                backdrop-blur-xl
+                transition duration-500 hover:-translate-y-2 hover:shadow-[0_0_55px_rgba(212,175,106,0.35),0_40px_80px_rgba(0,0,0,0.65)]"
+              >
 
               {/* IMAGE */}
               <img
@@ -131,8 +131,8 @@ export default function ServicesSection() {
               <div className="pointer-events-none absolute inset-0 opacity-0 group-hover:opacity-100 transition duration-700">
                 <div
                   className="absolute -left-40 top-0 h-full w-40 rotate-[25deg]
-        bg-[linear-gradient(90deg,transparent,rgba(255,215,130,0.35),transparent)]
-        blur-xl group-hover:translate-x-[420px] transition duration-[1400ms]"
+                    bg-[linear-gradient(90deg,transparent,rgba(255,215,130,0.35),transparent)]
+                    blur-xl group-hover:translate-x-[420px] transition duration-[1400ms]"
                 />
               </div>
 
