@@ -191,6 +191,11 @@ export default function AboutSection() {
             <GlobalParticles
               className="absolute -inset-6"
               count={120}
+              animate
+              float
+              twinkle
+              pulse
+              speed={1.25}
               minSize={1.5}
               maxSize={3.6}
               minOpacity={0.1}

@@ -229,6 +229,29 @@ html {
     globalParticleTwinkle var(--gp-twinkle-duration) ease-in-out infinite var(--gp-delay);
 }
 
+.global-particle--static {
+  animation: none;
+}
+
+.global-particle--no-float {
+  animation: globalParticleTwinkle var(--gp-twinkle-duration) ease-in-out infinite var(--gp-delay);
+}
+
+.global-particle--no-twinkle {
+  animation: globalParticleFloat var(--gp-float-duration) ease-in-out infinite var(--gp-delay);
+}
+
+.global-particle--no-float.global-particle--no-twinkle {
+  animation: none;
+}
+
+.global-particle--pulse {
+  animation:
+    globalParticleFloat var(--gp-float-duration) ease-in-out infinite var(--gp-delay),
+    globalParticleTwinkle var(--gp-twinkle-duration) ease-in-out infinite var(--gp-delay),
+    globalParticlePulse var(--gp-pulse-duration) ease-in-out infinite var(--gp-delay);
+}
+
 @keyframes globalParticleFloat {
   0%,
   100% {
@@ -246,6 +269,18 @@ html {
   }
   50% {
     filter: brightness(1.25);
+  }
+}
+
+@keyframes globalParticlePulse {
+  0%,
+  100% {
+    opacity: 0.7;
+    filter: brightness(0.9);
+  }
+  50% {
+    opacity: 1;
+    filter: brightness(1.45);
   }
 }
 
