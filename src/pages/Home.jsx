@@ -5,9 +5,13 @@ import Hero from "../components/HeroGallery";
 import AboutSection from "../components/AboutSection";
 import ServicesSection from "../components/ServicesSection";
 import PortfolioSection from "../components/PortfolioSection";
+import PreWeddingShotsSection from "../components/PreWeddingShotsSection";
+import HighlightShowcase from "../components/HighlightShowcase.jsx";
 import TestimonialsSection from "../components/TestimonialsSection";
 import CTASection from "../components/CTASection";
 import Header from "../components/Header";
+import WeddingShowcaseSection from "../components/WeddingShowcaseSection";
+import Footer from "../components/Footer";
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -64,13 +68,24 @@ export default function Home() {
         <div id="services" className="relative z-20 scroll-mt-28 md:scroll-mt-32">
           <ServicesSection />
         </div>
-        <div id="portfolio" className="relative z-20 scroll-mt-28 md:scroll-mt-32">
+        
+        {/* <div id="portfolio" className="relative z-20 scroll-mt-28 md:scroll-mt-32">
           <PortfolioSection />
+        </div> */}
+        {/* <div id="prewedding" className="relative z-20 scroll-mt-28 md:scroll-mt-32">
+          <PreWeddingShotsSection />
+        </div> */}
+        <div id="highlights" className="relative z-20 scroll-mt-28 md:scroll-mt-32">
+          {/* <HighlightShowcase /> */}
+          <TestimonialsSection />
+        </div>
+        <div id="wedding" className="relative z-20 scroll-mt-28 md:scroll-mt-32">
+          <WeddingShowcaseSection />
         </div>
         <div id="contact" className="relative z-20 scroll-mt-28 md:scroll-mt-32">
-          <TestimonialsSection />
           <CTASection />
         </div>
+        <Footer />
       </div>
     </>
   );

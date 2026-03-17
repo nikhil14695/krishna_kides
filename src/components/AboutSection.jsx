@@ -144,15 +144,37 @@ export default function AboutSection() {
   return (
     <section
       ref={sectionRef}
-      className="relative w-full overflow-hidden bg-transparent py-24 text-white md:py-32"
+      className="section"
     >
+      <GlobalParticles
+        className="absolute -inset-6"
+        count={200}
+        animate
+        float
+        twinkle
+        pulse
+        speed={1.25}
+        minSize={1.5}
+        maxSize={3.6}
+        minOpacity={0.1}
+        maxOpacity={0.45}
+        durationMin={1.8}
+        durationMax={4}
+        drift={20}
+        color="#d4af67"
+        glow="0 0 10px rgba(212,175,103,0.62)"
+        leftMin={-5}
+        leftMax={105}
+        topMin={-5}
+        topMax={105}
+      />
       {/* <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(circle_at_16%_22%,rgba(212,175,103,0.14),transparent_46%),radial-gradient(circle_at_82%_72%,rgba(191,128,56,0.14),transparent_42%),linear-gradient(180deg,rgba(9,7,4,0.94),rgba(8,6,4,1))]" />
       <div className="pointer-events-none absolute inset-0 opacity-30 [background-image:linear-gradient(rgba(214,176,106,0.07)_1px,transparent_1px),linear-gradient(90deg,rgba(214,176,106,0.06)_1px,transparent_1px)] [background-size:6px_6px,6px_6px]" />
       <div className="about-bg-float-1 about-parallax pointer-events-none absolute -left-24 -top-24 h-72 w-72 rounded-full bg-[#7b1e3a]/16 blur-3xl" />
       <div className="about-bg-float-2 about-parallax pointer-events-none absolute -bottom-24 -right-20 h-80 w-80 rounded-full bg-[#d4af37]/12 blur-3xl" />
       <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(circle,rgba(255,232,176,0.55)_1px,transparent_1.2px)] [background-size:180px_180px] opacity-20" /> */}
 
-      <div className="creta-container relative">
+      <div className="creta-container relative z-10">
         <div className="grid items-center gap-12 lg:grid-cols-[1fr_1.05fr] lg:gap-16">
           <div>
             <p className="about-reveal mb-4 text-sm uppercase tracking-[0.34em] text-[#d2ac64]">
@@ -188,7 +210,7 @@ export default function AboutSection() {
           </div>
 
           <div className="about-reveal relative overflow-visible">
-            <GlobalParticles
+            {/* <GlobalParticles
               className="absolute -inset-6"
               count={120}
               animate
@@ -209,7 +231,7 @@ export default function AboutSection() {
               leftMax={105}
               topMin={-5}
               topMax={105}
-            />
+            /> */}
 
             {/* Glow background */}
             <div className="pointer-events-none absolute -inset-4 rounded-[38px] 
@@ -236,13 +258,13 @@ export default function AboutSection() {
                     <div className="absolute inset-0 bg-gradient-to-t from-[#080706]/95 via-[#080706]/42 to-transparent" />
 
                     <div className="absolute inset-x-0 bottom-0 p-5 md:p-6">
-                      <h3 className="text-[31px] leading-tight text-[#dab066] md:text-[36px]">
+                      <h3 className="text-[24px] leading-tight text-[#dab066] md:text-[30px]">
                         {skill.title}
                       </h3>
 
-                      <p className="mt-2 max-w-[95%] text-sm leading-relaxed text-[#dbd4c4] md:text-[18px]">
+                      {/* <p className="mt-2 max-w-[95%] text-sm leading-relaxed text-[#dbd4c4] md:text-[18px]">
                         {skill.description}
-                      </p>
+                      </p> */}
                     </div>
                   </div>
                 ))}

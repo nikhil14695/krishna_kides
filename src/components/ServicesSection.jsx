@@ -14,28 +14,55 @@ const services = [
   { title: "Birthday Shoots", image: img2, tag: "02" },
   { title: "Theme Studio Shoots", image: img3, tag: "03" },
   { title: "Family Portraits", image: img4, tag: "04" },
+  { title: "Family Portraits", image: img1, tag: "05" },
+  { title: "Birthday Shoots", image: img2, tag: "02" },
+  { title: "Theme Studio Shoots", image: img3, tag: "03" },
+  { title: "Family Portraits", image: img4, tag: "04" },
 ];
 
 export default function ServicesSection() {
   const sectionRef = useRef(null);
+  const trackRef = useRef(null);
   const cardsRef = useRef([]);
 
   useEffect(() => {
+    if (!sectionRef.current || !trackRef.current) return;
+
     const ctx = gsap.context(() => {
+      const section = sectionRef.current;
+      const track = trackRef.current;
       const cards = cardsRef.current.filter(Boolean);
+
+      const getScrollDistance = () =>
+        Math.max(0, track.scrollWidth - section.offsetWidth);
+
+      const tween = gsap.to(track, {
+        x: () => -getScrollDistance(),
+        ease: "none",
+      });
+
+      ScrollTrigger.create({
+        trigger: section,
+        start: "top top",
+        end: () => `+=${getScrollDistance()}`,
+        pin: true,
+        scrub: 1,
+        animation: tween,
+        invalidateOnRefresh: true,
+      });
 
       gsap.fromTo(
         cards,
-        { y: 70, opacity: 0 },
+        { opacity: 0, y: 24 },
         {
-          y: 0,
           opacity: 1,
-          duration: 0.9,
-          stagger: 0.15,
+          y: 0,
+          duration: 0.8,
+          stagger: 0.12,
           ease: "power3.out",
           scrollTrigger: {
-            trigger: sectionRef.current,
-            start: "top 80%",
+            trigger: section,
+            start: "top top",
           },
         }
       );
@@ -47,7 +74,7 @@ export default function ServicesSection() {
   return (
     <section
       ref={sectionRef}
-      className="relative overflow-hidden pt-28 pb-24 text-white"
+      className="section"
     >
 
       {/* GOLD AMBIENT BACKGROUND */}
@@ -56,7 +83,7 @@ export default function ServicesSection() {
       radial-gradient(circle_at_80%_70%,rgba(123,30,58,0.22),transparent_50%)]" />
 
       <GlobalParticles
-        className="absolute -inset-6"
+        className="absolute -inset-6 z-0"
         count={300}
         animate
         float
@@ -97,59 +124,50 @@ export default function ServicesSection() {
         glow="0 0 8px rgba(240,212,157,0.35)"
       /> */}
 
-      <div className="creta-container relative">
+      <div className="creta-container relative z-10">
 
         <h2 className="mx-auto mb-16 max-w-5xl text-center text-4xl leading-[1.1] text-[#efe7d6] md:text-[68px]">
           Services Designed for Timeless Childhood Memories
         </h2>
 
-        <div className="grid gap-6 md:grid-cols-2 xl:grid-cols-4">
+      </div>
 
+      <div className="relative z-10 overflow-hidden">
+        <div className="creta-container">
+          <div ref={trackRef} className="flex w-max gap-6 pb-8">
           {services.map((service, i) => (
             <article
-              key={service.title}
+              key={`${service.title}-${i}`}
               ref={(el) => (cardsRef.current[i] = el)}
-              className="group relative min-h-[390px] overflow-hidden rounded-[24px]
+              className="group relative min-h-[390px] min-w-[260px] overflow-hidden rounded-[24px]
                 border border-[#d4af6a]/40
                 bg-[linear-gradient(180deg,rgba(28,22,17,0.92),rgba(10,8,6,0.98))]
                 shadow-[0_0_40px_rgba(212,175,106,0.22),0_30px_70px_rgba(0,0,0,0.55)]
                 backdrop-blur-xl
-                transition duration-500 hover:-translate-y-2 hover:shadow-[0_0_55px_rgba(212,175,106,0.35),0_40px_80px_rgba(0,0,0,0.65)]"
-              >
-
-              {/* IMAGE */}
+                transition duration-500 hover:-translate-y-2
+                hover:shadow-[0_0_55px_rgba(212,175,106,0.35),0_40px_80px_rgba(0,0,0,0.65)]
+                sm:min-w-[300px] lg:min-w-[340px] xl:min-w-[380px]"
+            >
               <img
                 src={service.image}
                 alt={service.title}
                 className="absolute inset-0 h-full w-full object-cover transition duration-700 group-hover:scale-110"
               />
 
-              {/* DARK OVERLAY */}
-              <div className="absolute inset-0 bg-black/30 group-hover:bg-black/40 transition duration-500" />
+              <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/30 to-transparent"></div>
 
-              {/* LIGHT SWEEP */}
-              <div className="pointer-events-none absolute inset-0 opacity-0 group-hover:opacity-100 transition duration-700">
-                <div
-                  className="absolute -left-40 top-0 h-full w-40 rotate-[25deg]
-                    bg-[linear-gradient(90deg,transparent,rgba(255,215,130,0.35),transparent)]
-                    blur-xl group-hover:translate-x-[420px] transition duration-[1400ms]"
-                />
-              </div>
-
-              {/* TAG */}
-              <span
-                className="absolute right-4 top-4 rounded-full border border-[#d4af6a]/40
-      bg-black/70 px-2 py-1 text-xs tracking-wider text-[#d4af6a] backdrop-blur"
-              >
+              {/* <span className="absolute right-4 top-4 rounded-full border border-[#d4af6a]/40 bg-black/70 px-2 py-1 text-xs tracking-wider text-[#d4af6a] backdrop-blur">
                 {service.tag}
-              </span>
+              </span> */}
 
-              {/* TITLE PANEL */}
-
-
+              <div className="absolute bottom-0 left-0 w-full p-6">
+                <h3 className="text-xl font-semibold text-white tracking-wide">
+                  {service.title}
+                </h3>
+              </div>
             </article>
           ))}
-
+          </div>
         </div>
       </div>
     </section>

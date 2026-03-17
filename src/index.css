@@ -123,6 +123,20 @@ html {
   margin-inline: auto;
 }
 
+/* ================= Common Section Styles ================= */
+.section {
+  position: relative;
+  overflow: hidden;
+  background: transparent;
+  padding: 100px 0;
+  color: white;
+}
+
+@media (min-width: 768px) {
+  .section {
+    padding: 50px 0;
+  }
+}
 @media (max-width: 2560px) {
   :root { --creta-max: 1640px; --creta-gutter: 28px; }
 }
@@ -288,4 +302,52 @@ html {
   .global-particle {
     animation: none;
   }
+}
+
+/* .swiper-button-next,
+.swiper-button-prev{
+  color:#d4af6a;
+  background:rgba(0,0,0,0.55);
+  backdrop-filter: blur(6px);
+  width:44px;
+  height:44px;
+  border-radius:50%;
+  border:1px solid rgba(212,175,106,0.4);
+  transition:all .3s ease;
+}
+
+.swiper-button-next:after,
+.swiper-button-prev:after{
+  font-size:16px;
+  font-weight:700;
+}
+
+.swiper-button-next:hover,
+.swiper-button-prev:hover{
+  background:#d4af6a;
+  color:#000;
+  box-shadow:0 0 15px rgba(212,175,106,0.6);
+} */
+
+/* .swiper-button-prev{
+  left:-10px;
+}
+
+.swiper-button-next{
+  right:-10px;
+} */
+.highlight-slider .swiper-slide {
+  opacity: .5;
+  transform: scale(.85);
+  transition: all .4s ease;
+}
+
+.highlight-slider .swiper-slide-active {
+  opacity: 1;
+  transform: scale(1);
+}
+
+.highlight-slider .swiper-slide-prev,
+.highlight-slider .swiper-slide-next {
+  opacity: .8;
 }

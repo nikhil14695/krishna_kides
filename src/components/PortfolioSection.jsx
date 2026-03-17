@@ -1,4 +1,5 @@
 // PortfolioSection.jsx
+import GlobalParticles from "./GlobalParticles";
 import img1 from "../assets/studio_photos/1.webp";
 import img2 from "../assets/studio_photos/2.webp";
 import img3 from "../assets/studio_photos/3.webp";
@@ -12,8 +13,30 @@ const portfolioImages = [img1, img2, img3, img4, img5, img6, img7, img8];
 
 export default function PortfolioSection() {
   return (
-    <section className="bg-transparent py-24 text-white md:py-28">
-      <div className="creta-container">
+    <section className="section">
+      <GlobalParticles
+        className="absolute -inset-6"
+        count={200}
+        animate
+        float
+        twinkle
+        pulse
+        speed={1.25}
+        minSize={1.5}
+        maxSize={3.6}
+        minOpacity={0.1}
+        maxOpacity={0.45}
+        durationMin={1.8}
+        durationMax={4}
+        drift={20}
+        color="#d4af67"
+        glow="0 0 10px rgba(212,175,103,0.62)"
+        leftMin={-5}
+        leftMax={105}
+        topMin={-5}
+        topMax={105}
+      />
+      <div className="creta-container relative z-10">
         <h2 className="mb-16 text-center text-4xl text-[#d3ad67] md:mb-20 md:text-5xl">
           Featured Works
         </h2>

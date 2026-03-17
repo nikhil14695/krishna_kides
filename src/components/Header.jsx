@@ -22,8 +22,8 @@ export default function Header({ headerRef }) {
           <a href="#services" className="header-item text-sm tracking-wide text-[#f5f2eb] transition hover:text-[#d4af37]">
             Services
           </a>
-          <a href="#portfolio" className="header-item text-sm tracking-wide text-[#f5f2eb] transition hover:text-[#d4af37]">
-            Portfolio
+          <a href="#wedding" className="header-item text-sm tracking-wide text-[#f5f2eb] transition hover:text-[#d4af37]">
+            Wedding
           </a>
           <a href="#contact" className="header-item text-sm tracking-wide text-[#f5f2eb] transition hover:text-[#d4af37]">
             Contact

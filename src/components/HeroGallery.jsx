@@ -3,6 +3,7 @@ import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { images } from "../data/herosectionimg";
 import logo from "../assets/kids_logo.png";
+import GlobalParticles from "./GlobalParticles";
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -124,6 +125,24 @@ export default function Hero() {
       {/* Global dark gradient tint over the gallery. */}
       <div className="absolute inset-0 z-10 bg-gradient-to-b from-black/24 via-black/34 to-black/50" />
       <div className="pointer-events-none absolute inset-0 z-[11] bg-[radial-gradient(circle_at_center,rgba(14,10,8,0.12)_0%,rgba(14,10,8,0.4)_46%,rgba(8,6,5,0.68)_100%)]" />
+      {/* <GlobalParticles
+        className="global-particles absolute inset-0 z-[12]"
+        count={55}
+        animate
+        float
+        twinkle
+        pulse={false}
+        speed={0.9}
+        minSize={1.5}
+        maxSize={3.5}
+        minOpacity={0.08}
+        maxOpacity={0.3}
+        durationMin={3}
+        durationMax={6}
+        drift={16}
+        color="#d4af6a"
+        glow="0 0 10px rgba(212,175,106,0.35)"
+      /> */}
 
       {/* Centered brand logo above animated tiles. */}
       <div className="pointer-events-none absolute inset-0 z-50 flex items-center justify-center">
