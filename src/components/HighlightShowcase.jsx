@@ -85,14 +85,18 @@ const PreWeddingSlider = () => {
     <section className="section  font-serif">
        <div className="creta-container text-gold-200 dvh-container">
           {/* Header Section - Height controlled */}
-          <div className="text-center showcase-header">
-            <h2 className="responsive-title font-bold uppercase tracking-wider text-gold-300">
-              LOVE STORIES: PRE-WEDDING HIGHLIGHTS
-            </h2>
-            <p className="responsive-subtitle text-gold-100">
-              Relive the Magic of Their Journey
-            </p>
-          </div>
+          <div className="mx-auto mb-14 max-w-3xl text-center">
+          <p className="text-sm uppercase tracking-[0.35em] text-[#d2ac64]">
+            Love Stories
+          </p>
+          <h2 className="mt-5 text-4xl leading-[1.1] text-[#f5f2eb] md:text-[58px]">
+            Pre-Wedding Highlights That Feel Cinematic
+          </h2>
+          <p className="mt-6 text-lg text-[#d1ccbf]">
+            Relive their journey with curated frames and short films designed for
+            timeless memories.
+          </p>
+        </div>
 
           {/* Main Slider Area - Flex grow to fill remaining space */}
           <div className="relative group slider-main-area mx-auto rounded-3xl border-2 border-gold-400 p-4 md:p-8 shadow-2xl bg-gray-900 overflow-hidden">

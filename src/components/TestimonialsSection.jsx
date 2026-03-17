@@ -53,11 +53,17 @@ export default function LoveStoriesSlider() {
       />
       <div className="creta-container relative z-10">
         {/* TITLE */}
-        <div className="mb-10 text-center">
-          <h2 className="text-3xl font-bold text-yellow-400">
-            LOVE STORIES: PRE-WEDDING HIGHLIGHTS
+        <div className="mx-auto mb-14 max-w-3xl text-center">
+          <p className="text-sm uppercase tracking-[0.35em] text-[#d2ac64]">
+            Love Stories
+          </p>
+          <h2 className="mt-5 text-4xl leading-[1.1] text-[#f5f2eb] md:text-[58px]">
+            Pre-Wedding Highlights That Feel Cinematic
           </h2>
-          <p className="text-gray-400">Relive the Magic of Their Journey</p>
+          <p className="mt-6 text-lg text-[#d1ccbf]">
+            Relive their journey with curated frames and short films designed for
+            timeless memories.
+          </p>
         </div>
 
         {/* MAIN SLIDER */}
